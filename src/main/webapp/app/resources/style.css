@@ -1,0 +1,37 @@
+@import 'font-awesome.min.css';
+@import 'font-awesome4.min.css';
+@import 'KitchenSink-all_1.css';
+@import 'KitchenSink-all_2.css';
+@import 'Admin-all_1.css';
+@import 'Admin-all_2.css';
+@import 'Admin-all_3.css';
+.no-icon {display:none;}
+.orange{color: orange}
+.marginRight10{margin-right: 10px}
+.marginRight20{margin-right: 20px}
+.color-success{color: #82af6f;}
+.color-danger{color: #d15b47;}
+.cell-editing-edit-default::before{content:"\f005";font: 16px/1 FontAwesome;}
+#instructions ul li {
+	list-style-type:disc;
+	list-style-position:outside;
+	font-size:12px;
+	margin:0px 0px 0px 20px;
+}
+/* Using standard theme */
+.ux-notification-window .x-window-body {
+	text-align: center;
+	padding: 15px 5px 15px 5px;
+}
+.ux-notification-light .x-window-body {
+	text-align: center;
+	padding: 15px 5px 20px 5px;
+	background-color: transparent;
+	border: 0px solid white;
+}
+.dashboard-panel{cursor: pointer;}
+.dashboard-panel .x-title-text,.dashboard-panel-param .x-title-text{color: black;}
+.dashboard-panel .x-title-text-default{font-size: 20px;text-align: center;}
+.dashboard-panel .x-form-item-label-inner-default,.dashboard-panel .x-form-display-field-default{
+	font-size: 20px;
+}

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+<!-- <properties resource="jdbc.properties"/> -->
+  <context id="oracleGenerator" >
+   <!--<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>  
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin> 
+  	 Pagination
+        <plugin type="com.broit.plugin.OraclePaginationPlugin"></plugin>
+         -->  
+   <commentGenerator>
+  		<property name="suppressAllComments" value="true"/>
+  	</commentGenerator>
+
+    <!-- <jdbcConnection driverClass="${jdbc.driverClassName}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}" /> -->
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@(description=(address=(host=58.56.181.112)(protocol=tcp)(port=1521))(connect_data=(service_name=orcl)))" userId="immes" password="qazwsx0.00" />
+    <javaModelGenerator targetPackage="com.broit.model" targetProject="src/main/java" >
+    	<property name="enableSubPackages" value="false" />   
+        <property name="trimStrings" value="true" />   
+    </javaModelGenerator>
+    <sqlMapGenerator targetPackage="com.broit.model.xml" targetProject="src/main/resources" />
+    <javaClientGenerator targetPackage="com.broit.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+	
+	<table tableName="DATA_IMM_PROTOALERM" domainObjectName="DataImmProtoalerm"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+	 <!-- <table tableName="ACC_DOC" domainObjectName="AccDoc"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="ACC_DOC_ARCHIVE" domainObjectName="AccDocArchive"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+     
+     <table tableName="ACC_IMM" domainObjectName="AccImm"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="ACC_IMM_COTS" domainObjectName="AccImmCots"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="ACC_IMM_FAULT" domainObjectName="AccImmFault"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+        
+     <table tableName="ACC_IMM_MOULD" domainObjectName="AccImmMould"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    
+           
+     <table tableName="ACC_IMM_PARAMCODE" domainObjectName="AccImmParamcode"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    
+        
+     <table tableName="ACC_IMM_ROBOT" domainObjectName="AccImmRobot"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="ACC_MOULD" domainObjectName="AccMould"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+        
+     <table tableName="ACC_MOULD_FAULT" domainObjectName="AccMouldFault"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="ACC_MOULD_LOGIC" domainObjectName="AccMouldLogic"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="ACC_MOULD_LOGICGROUP" domainObjectName="AccMouldLogicgroup"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="ACC_MOULD_PARAM" domainObjectName="AccMouldParam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="ACC_MOULD_PRT" domainObjectName="AccMouldPrt"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="ACC_ROBOT" domainObjectName="AccRobot"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="ACC_ROBOT_FAULT" domainObjectName="AccRobotFault"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    
+        
+     <table tableName="ACC_ROBOT_PARAM" domainObjectName="AccRobotParam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>     
+        
+     <table tableName="BASE_BRANCH" domainObjectName="BaseBranch"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="BASE_CO" domainObjectName="BaseCo"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>       
+        
+     <table tableName="BASE_TEAM" domainObjectName="BaseTeam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="BASE_WS" domainObjectName="BaseWs"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+        
+     <table tableName="PRD_LINE" domainObjectName="PrdLine"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="PRD_LINE_COTS" domainObjectName="PrdLineCots"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="PRD_LINE_PART" domainObjectName="PrdLinePart"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+     <table tableName="PRD_LINE_ROBOT" domainObjectName="PrdLineRobot"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+     <table tableName="PRD_LINE_STATUS" domainObjectName="PrdLineStatus"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    
+        
+     <table tableName="PRD_LINE_TEAM" domainObjectName="PrdLineTeam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+        
+      <table tableName="PRD_LINE_USER" domainObjectName="PrdLineUser"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="PRD_PLAN" domainObjectName="PrdPlan"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>           
+        
+      <table tableName="PRD_PLAN_DIRECT" domainObjectName="PrdPlanDirect"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="PRD_PLAN_STATUS" domainObjectName="PrdPlanStatus"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+      <table tableName="SERV_CUSTOMER" domainObjectName="ServCustomer"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SERV_ORDER" domainObjectName="ServOrder"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="SERV_ORDER_PRT" domainObjectName="ServOrderPrt"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="SERV_ORDER_PRT_MATERIAL" domainObjectName="ServOrderPrtMaterial"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SERV_ORDER_PRT_QUALITY" domainObjectName="ServOrderPrtQuality"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+     <table tableName="SERV_ORDER_PRT_STATUS" domainObjectName="ServOrderPrtStatus"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+     <table tableName="SERV_PRODUCT" domainObjectName="ServProduct"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+     <table tableName="SERV_PRT_FORMULA" domainObjectName="ServPrtFormula"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SERV_PRT_FORMULA_ITEM" domainObjectName="ServPrtFormulaItem"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="SERV_PRT_FORMULA_MATERIAL" domainObjectName="ServPrtFormulaMaterial"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+      <table tableName="SERV_PRT_PART" domainObjectName="ServPrtPart"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="SYS_MESSAGE" domainObjectName="SysMessage"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SYS_PARAM" domainObjectName="SysParam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SYS_ROLE_MESSAGE" domainObjectName="SysRoleMessage"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="SYS_SET" domainObjectName="SysSet"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+      <table tableName="WMS_COLOR" domainObjectName="WmsColor"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="WMS_COLOR_BATCH" domainObjectName="WmsColorBatch"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+      <table tableName="WMS_COLOR_DELIVERY" domainObjectName="WmsColorDelivery"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_COLOR_ENTRY" domainObjectName="WmsColorEntry"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_GOODS" domainObjectName="WmsGoods"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>
+        
+      <table tableName="WMS_GOODS_BATCH" domainObjectName="WmsGoodsBatch"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    
+        
+      <table tableName="WMS_GOODS_DELIVERY" domainObjectName="WmsGoodsDelivery"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_GOODS_ENTRY" domainObjectName="WmsGoodsEntry"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_MATERIAL" domainObjectName="WmsMaterial"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_MATERIAL_BATCH" domainObjectName="WmsMaterialBatch"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>  
+        
+      <table tableName="WMS_MATERIAL_DELIVERY" domainObjectName="WmsMaterialDelivery"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> 
+        
+      <table tableName="WMS_MATERIAL_ENTRY" domainObjectName="WmsMaterialEntry"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>            
+      
+          
+     <table tableName="PRD_LINE_OWNER" domainObjectName="PrdLineOwner"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> -->
+<!--      <table tableName="PRD_PLAN_GOODS" domainObjectName="PrdPlanGoods"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    -->
+
+<!-- <table tableName="DATA_PROTOCOL" domainObjectName="DataProtocol"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+<table tableName="DATA_PROTOCOL_PARAM" domainObjectName="DataProtocolParam"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   
+<table tableName="DATA_COMM_MAIN_IMM" domainObjectName="DataCommMainIimm"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>   --> 
+    
+        
+        
+     <!-- <table tableName="SYS_FUNCOPER" domainObjectName="SysFuncOper"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/> -->      
+<!--    <table tableName="PRD_PRT_REJECT" domainObjectName="PrdPrtReject"
+     	enableCountByExample="false"
+      	enableUpdateByExample="false"
+       	enableDeleteByExample="false"
+        enableSelectByExample="false"
+        selectByExampleQueryId="false"/>    -->                                                 
+  </context>
+</generatorConfiguration>

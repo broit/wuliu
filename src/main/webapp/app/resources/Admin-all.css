@@ -1,0 +1,39 @@
+@import 'font-awesome.min.css';
+@import 'Admin-all_1.css';
+@import 'Admin-all_2.css';
+@import 'Admin-all_3.css';
+
+
+.x-boundlist {
+    background: #fff none repeat scroll 0 0;
+    border-color: #d0d0d0;
+    border-style: solid;
+    border-width: 1px;
+}
+.x-boundlist-item {
+    border-color: #fff;
+    border-style: dotted;
+    border-width: 1px;
+    color: #404040;
+    cursor: pointer;
+    font: 13px/30px "Open Sans","Helvetica Neue",helvetica,arial,verdana,sans-serif;
+    padding: 0 10px;
+    position: relative;
+}
+.x-boundlist-selected {
+    background: #5fa2dd none repeat scroll 0 0;
+    border-color: #5fa2dd;
+    color: #fff;
+}
+.x-boundlist-item-over {
+    background: #7fb5e4 none repeat scroll 0 0;
+    border-color: #7fb5e4;
+    color: #fff;
+}
+.x-boundlist-floating {
+    border-top-width: 0;
+}
+.x-boundlist-above {
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+}
